@@ -1,6 +1,24 @@
 #include "monty.h"
 
 /**
+ * my_free - frees memory
+ * @head_node: pointer to head node
+ *
+ * Return: void
+ */
+void my_free(stack_t *head_node)
+{
+	stack_t *ptr;
+
+	while (head_node != NULL)
+	{
+		temp = head_node->next;
+		free(head_node);
+		head_node = temp;
+	}
+}
+
+/**
  * main - Entry point
  * @argc: number of arguments passed
  * @argv: array of arguments
@@ -40,6 +58,7 @@ int main(int argc, char *argv[])
 			}
 		}
 		free(line);
+		my_free(head_node);
 		fclose(file);
 	}
 
