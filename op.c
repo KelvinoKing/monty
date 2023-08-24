@@ -16,6 +16,7 @@ void push(stack_t **head, unsigned int line_num)
 	if (new == NULL)
 	{
 		printf("Error: malloc failed");
+		my_free(*head);
 		exit(EXIT_FAILURE);
 	}
 	new->n = global_variable;
@@ -82,5 +83,6 @@ void get_instructions(char *word, stack_t **head, unsigned int line_num)
 		i++;
 	}
 	printf("L%d: unknown instruction %s\n", line_num, word);
+	my_free(*head);
 	exit(EXIT_FAILURE);
 }

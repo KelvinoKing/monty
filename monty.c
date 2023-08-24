@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 			while ((num_bytes = getline(&line, &line_len, file)) != -1)
 			{
 				num_lines++;
-				word = check_word(line, num_lines);
+				word = check_word(line, &head_node, num_lines);
 				if (word != NULL)
 					get_instructions(word, &head_node, num_lines);
 			}

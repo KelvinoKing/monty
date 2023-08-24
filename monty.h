@@ -40,7 +40,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-char *check_word(char *line, int num_lines);
+char *check_word(char *line, stack_t **head, int num_lines);
 void get_instructions(char *word, stack_t **head, unsigned int line_num);
 void push(stack_t **head, unsigned int line_num);
 void display(stack_t **head, unsigned int line_num);
