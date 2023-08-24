@@ -44,4 +44,5 @@ char *check_word(char *line, int num_lines);
 void get_instructions(char *word, stack_t **head, unsigned int line_num);
 void push(stack_t **head, unsigned int line_num);
 void display(stack_t **head, unsigned int line_num);
+void my_free(stack_t *head);
 #endif /*MONTY_H*/
