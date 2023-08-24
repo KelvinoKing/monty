@@ -81,6 +81,6 @@ void get_instructions(char *word, stack_t **head, unsigned int line_num)
 		}
 		i++;
 	}
-	printf("L%d: unknown instruction %s", line_num, word);
+	printf("L%d: unknown instruction %s\n", line_num, word);
 	exit(EXIT_FAILURE);
 }
