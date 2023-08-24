@@ -14,8 +14,8 @@ int main(int argc, char *argv[])
 	size_t line_len = 0;
 	ssize_t num_bytes;
 	char *line = NULL;
-	char *word;
-	stack_t *head_node;
+	char *word = NULL;
+	stack_t *head_node = NULL;
 
 	if (argc != 2)
 	{
