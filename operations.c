@@ -107,13 +107,13 @@ void pchar_func(stack_t **head, unsigned int line_num)
 {
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*head)->n < 0 || (*head)->n > 127)
 	{
-		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 
