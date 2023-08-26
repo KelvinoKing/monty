@@ -89,7 +89,7 @@ void mod_func(stack_t **head, unsigned int line_num)
 	}
 	if (temp->n == 0)
 	{
-		fprintf(stderr, "L%d: division by zero", line_num);
+		fprintf(stderr, "L%d: division by zero\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 
