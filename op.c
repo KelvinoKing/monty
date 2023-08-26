@@ -37,7 +37,7 @@ void push(stack_t **head, unsigned int line_num)
 }
 
 /**
- * display - diaplays all elements in stack
+ * pall - diaplays all elements in stack
  * @head: pointer to pointer of head node
  * @line_num: line number
  *
@@ -49,7 +49,7 @@ void pall(stack_t **head, unsigned int line_num)
 
 	(void) line_num;
 	ptr = *head;
-	while (ptr != NULL)
+	while (ptr)
 	{
 		printf("%d\n", ptr->n);
 		ptr = ptr->next;
@@ -57,9 +57,9 @@ void pall(stack_t **head, unsigned int line_num)
 }
 
 /**
- * pop - Prints out the top element of stack
- * @head - pointer to pointer of head node
- * @line_num - line number
+ * pint - Prints out the top element of stack
+ * @head: pointer to pointer of head node
+ * @line_num: line number
  */
 void pint(stack_t **head, unsigned int line_num)
 {
@@ -117,6 +117,7 @@ void get_instructions(char *word, stack_t **head, unsigned int line_num)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 	int i = 0;

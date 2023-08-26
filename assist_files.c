@@ -1,6 +1,54 @@
 #include "monty.h"
 
 /**
+ * len_stack - Returns the size of stack
+ * @head: pointer to head node
+ *
+ * Return: int
+ */
+int len_stack(stack_t *head)
+{
+	int count = 0;
+
+	if (head == NULL)
+		return (0);
+	while (head)
+	{
+		count++;
+		head = head->next;
+	}
+	return (count);
+
+}
+
+/**
+ * swap - Swaps two top elements of a stack
+ * @head: pointer to pointer of head node
+ * @line_num: line number
+ *
+ * Return: void
+ */
+void swap(stack_t **head, unsigned int line_num)
+{
+	stack_t *temp = NULL, *temp2 = NULL;
+
+	temp = *head;
+	if (temp == NULL || temp->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	temp2 = (*head)->next;
+
+	temp->prev = temp2;
+	temp2->prev = NULL;
+	temp->next = temp2->next;
+	temp2->next = temp;
+
+	*head = temp2;
+}
+
+/**
  * is_numeric - return true if the argument is purely numbers
  * @str: the parameter
  *
