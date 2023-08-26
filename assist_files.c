@@ -32,7 +32,7 @@ char *check_word(char *line, stack_t **head, int num_lines)
 {
 	char *command = NULL;
 	char *argument = NULL;
-	char delimiter[2] = "\n ";
+	char delimiter[3] = " \t\n";
 
 	command = strtok(line, delimiter);
 	if (command == NULL)
