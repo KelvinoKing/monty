@@ -119,6 +119,7 @@ void get_instructions(char *word, stack_t **head, unsigned int line_num)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	int i = 0;

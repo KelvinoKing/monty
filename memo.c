@@ -17,3 +17,14 @@ void my_free(stack_t *head)
 		head = temp;
 	}
 }
+
+/**
+ * nop - does nothing
+ * @head: pointer to pointer of head
+ * @line_num: number of current line
+ */
+void nop(stack_t **head, unsigned int line_num)
+{
+	(void) head;
+	(void) line_num;
+}
