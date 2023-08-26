@@ -47,4 +47,6 @@ void display(stack_t **head, unsigned int line_num);
 void my_free(stack_t *head);
 int len_stack(stack_t *head);
 void swap(stack_t **head, unsigned int line_num);
+void pop(stack_t **head, unsigned int line_num);
+void add(stack_t **head, unsigned int line_num);
 #endif /*MONTY_H*/

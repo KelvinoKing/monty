@@ -49,6 +49,27 @@ void swap(stack_t **head, unsigned int line_num)
 }
 
 /**
+ * add - Adds the first and second element
+ * @head: pointer to pointer of head node
+ * @line_num: number of line
+ */
+void add(stack_t **head, unsigned int line_num)
+{
+	stack_t *temp;
+	int sum;
+
+	temp = *head;
+	if (temp == NULL || temp->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	sum = temp->n + temp->next->n;
+	(*head)->next->n = sum;
+	pop(head, line_num);
+}
+
+/**
  * is_numeric - return true if the argument is purely numbers
  * @str: the parameter
  *
