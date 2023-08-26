@@ -124,6 +124,7 @@ void get_instructions(char *word, stack_t **head, unsigned int line_num)
 		{"div", div_func},
 		{"mul", mul_func},
 		{"mod", mod_func},
+		{"pchar", pchar_func},
 		{NULL, NULL}
 	};
 	int i = 0;

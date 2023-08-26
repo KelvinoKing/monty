@@ -97,3 +97,26 @@ void mod_func(stack_t **head, unsigned int line_num)
 	(*head)->next->n = result;
 	pop(head, line_num);
 }
+
+/**
+ * pchar_func - prints the char at the top of the stack
+ * @head: pointer to pointer of head node
+ * @line_num: line number with error
+ */
+void pchar_func(stack_t **head, unsigned int line_num)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*head)->n < 0 || (*head)->n > 127)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	write(1, &(*head)->n, 1);
+	printf("\n");
+}
