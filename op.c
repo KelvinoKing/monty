@@ -122,6 +122,7 @@ void get_instructions(char *word, stack_t **head, unsigned int line_num)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", div_func},
+		{"mul", mul_func},
 		{NULL, NULL}
 	};
 	int i = 0;

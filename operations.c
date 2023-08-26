@@ -48,3 +48,24 @@ void div_func(stack_t **head, unsigned int line_num)
 	(*head)->next->n = result;
 	pop(head, line_num);
 }
+
+/**
+ * mul_func - multiplies two elements of a stack
+ * @head: pointer to head node
+ * @line_num: line number with error
+ */
+void mul_func(stack_t **head, unsigned int line_num)
+{
+	stack_t *temp;
+	int result;
+
+	temp = *head;
+	if (temp == NULL || temp->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	result = temp->n * temp->next->n;
+	(*head)->next->n = result;
+	pop(head, line_num);
+}
