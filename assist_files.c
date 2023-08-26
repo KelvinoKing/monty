@@ -30,14 +30,15 @@ int is_numeric(char *str)
  */
 char *check_word(char *line, stack_t **head, int num_lines)
 {
-	char *command;
-	char *argument;
+	char *command = NULL;
+	char *argument = NULL;
+	char delimiter[2] = "\n ";
 
-	command = strtok(line, "\n ");
+	command = strtok(line, delimiter);
 	if (command == NULL)
 		return (NULL);
 
-	argument = strtok(NULL, "\n ");
+	argument = strtok(NULL, delimiter);
 	if (argument != NULL)
 	{
 		if (is_numeric(argument))
@@ -46,14 +47,14 @@ char *check_word(char *line, stack_t **head, int num_lines)
 		}
 		else
 		{
-			printf("L%d: usage: push integer\n", num_lines);
+			fprintf(stderr, "L%d: usage: push integer\n", num_lines);
 			my_free(*head);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else if (argument == NULL && strcmp(command, "push") == 0)
 	{
-		printf("L%d: usage: push integer\n", num_lines);
+		fprintf(stderr, "L%d: usage: push integer\n", num_lines);
 		my_free(*head);
 		exit(EXIT_FAILURE);
 	}
