@@ -57,6 +57,29 @@ void display(stack_t **head, unsigned int line_num)
 }
 
 /**
+ * pop - Prints out the top element of stack
+ * @head - pointer to pointer of head node
+ * @line_num - line number
+ */
+void pop(stack_t **head, unsigned int line_num)
+{
+	stack_t *temp = NULL;
+
+	temp = *head;
+	if (temp == NULL || head == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_num);
+		my_free(*head);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		printf("%d\n", temp->n);
+	}
+
+}
+
+/**
  * get_instructions - calls the specified function
  * @word: command
  * @head: pointer to pointer of head node
@@ -69,6 +92,7 @@ void get_instructions(char *word, stack_t **head, unsigned int line_num)
 	instruction_t array[] = {
 		{"push", push},
 		{"pall", display},
+		{"pint", pop},
 		{NULL, NULL}
 	};
 	int i = 0;
