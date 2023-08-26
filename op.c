@@ -130,7 +130,9 @@ void get_instructions(char *word, stack_t **head, unsigned int line_num)
 
 	while (array[i].opcode != NULL)
 	{
-		if (strcmp(array[i].opcode, word) == 0)
+		if (word[0] == '#')
+			return;
+		else if (strcmp(array[i].opcode, word) == 0)
 		{
 			array[i].f(head, line_num);
 			return;
